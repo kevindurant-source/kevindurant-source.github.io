@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, 凯文的博客">
+    <meta name="keywords" content="凯文的博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | 凯文的博客</title>
+    <title>凯文的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.2.0"></head>
+<meta name="generator" content="Hexo 5.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title"></h1>
                 </div>
             </div>
         </div>
@@ -444,7 +444,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-10-09
+                    2020-10-11
                 </div>
                 
 
@@ -460,19 +460,148 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+                <p>title: CSS基本样式和元素选择器</p>
+<h1 id="CSS基本样式和元素选择器"><a href="#CSS基本样式和元素选择器" class="headerlink" title="CSS基本样式和元素选择器"></a>CSS基本样式和元素选择器</h1><h2 id="1-什么是CSS"><a href="#1-什么是CSS" class="headerlink" title="1.什么是CSS"></a>1.什么是CSS</h2><p><strong>CSS</strong>：层叠样式表（Cascading Style Sheets，简写CSS），是一种用来为HTML文档添加样式（字体、间距、位置、颜色、角度等显示效果）的计算机语言。简单来说，HTML是内容的展示，而CSS是对内容的修饰。</p>
+<h2 id="2-CSS的引用方式"><a href="#2-CSS的引用方式" class="headerlink" title="2.CSS的引用方式"></a>2.CSS的引用方式</h2><p>①<strong>行内样式</strong>：在需要的标签内直接书写&lt; div style=”d代码”&gt; 内容&lt; /div &gt;,它只针对当前标签生效，写重复样式就会很影响效率。所以一般都不推荐使用。</p>
+<p>②<strong>内部样式</strong>：在head标签内新建一个style标签，</p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style language-css">
+        CSS中的代码注释格式采用的是：<span class="token comment" spellcheck="true">/* 注释文字 */</span>
+        h<span class="token number">1</span>&amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+            color=<span class="token string">"red"</span><span class="token punctuation">;</span>
+        &amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">/* 但是该样式只能在本文件中使用，不能在其他文件中使用*/</span>
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span></code></pre>
+<p>③<strong>外部样式</strong>：新建一个css文件，在css文件书写样式，然后在head标签中新建一个link标签，通过href属性设置外部css文件路径。</p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>这里书写css文件的路径<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></code></pre>
+<h2 id="3-元素选择器"><a href="#3-元素选择器" class="headerlink" title="3.元素选择器"></a>3.元素选择器</h2><p><strong>标签选择器</strong>：</p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style language-css">
+        <span class="token comment" spellcheck="true">/* 标签选择器 h1~h6，div，span，p，ul，ol，a等等*/</span>
+        h<span class="token number">1</span>&amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+            color=<span class="token string">"blue"</span><span class="token punctuation">;</span>
+        &amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span>
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>kiva，ixa，oo，delta<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span></code></pre>
+<p><strong>类选择器</strong>：</p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style language-css">
+        <span class="token number">.</span>leaf&amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+            color=<span class="token string">"red"</span><span class="token punctuation">;</span>
+        &amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span>
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">calss</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>leaf<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>dasfnanflasmflkalagnlag<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span></code></pre>
+<p><strong>id选择器</strong></p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style language-css">
+        /* 
+           id选择器和类选择器区别：
+           ① W<span class="token number">3</span>C标准规定，在同一个页面内，不允许有相同名字的id对象出现，但是允许相同名字的class。
+           ② 类选择器，好比人的名字，是可以多次重复使用的，比如张伟、王伟、李伟、李娜。
+           ③ id选择器，好比人的身份证号码，全中国是唯一的，不得重复。只能使用一次。
+        #kiva&amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+            color=<span class="token string">"green"</span><span class="token punctuation">;</span>
+        &amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span>
+        <span class="token number">.</span>class&amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+            color=<span class="token string">"yellow"</span><span class="token punctuation">;</span>
+        &amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span>
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>leaf<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>kiva<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>骑士<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span> <span class="token comment" spellcheck="true">&lt;!--显示id的样式,id选择器和类选择器就好比名字和身份证号码，一个身份证号码只能对应一个人，一个名字可以多个人相同--></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+</code></pre>
+<p><strong>多类名选择器</strong></p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style language-css">
+        <span class="token number">.</span>pink &amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+            <span class="token property">color</span><span class="token punctuation">:</span> pink<span class="token punctuation">;</span>
+        &amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span>
+        <span class="token number">.</span>font<span class="token number">20</span> &amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+            <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">20</span>px<span class="token punctuation">;</span>
+        &amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span>
+        <span class="token number">.</span>font<span class="token number">14</span> &amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+            <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">14</span>px<span class="token punctuation">;</span>
+        &amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span>
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>pink font20<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>虞姬<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span> 
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>font20<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>明世隐<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>font14 pink<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>甄姬<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>font14<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>貂蝉<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="4-CSS的基本样式"><a href="#4-CSS的基本样式" class="headerlink" title="4.CSS的基本样式"></a>4.CSS的基本样式</h2><p>尺寸样式：width（宽）height（高）</p>
+<p>位置样式：水平位置：margin-left，margin-right，垂直位置，margin-top margin-bottom ，它的复合写法：若是四个参数，按照顺时针方向，上右下左，    margin: 50px 20px 20px 30px;，两个参数时按照上下，左右，margin: 20px 30px。但是书写时先注意，记得清除默认边距，margin：0，能够减缓浏览器运行压力。</p>
+<p>装饰样式：元素颜色，backgrou-color，</p>
+<p>颜色的三种写法：</p>
+<ul>
+<li>直接写颜色的英文单词。</li>
+<li>rgb（0-255，0-255，0-255）</li>
+<li>十六进制数，，三位或六位。</li>
+</ul>
+<p>文字样式：文字大小 font-size，文字字体，font-family，文字颜色 color；</p>
+<pre class=" language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>css的基本样式<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style language-css">
+        <span class="token number">.</span>box<span class="token number">1</span> &amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">/* ① 尺寸样式，设置宽高：宽width 高height */</span>
+            <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">800</span>px<span class="token punctuation">;</span>
+            <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">100</span>px<span class="token punctuation">;</span>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+            <span class="token comment" spellcheck="true">/* ② 位置样式 */</span>
+            <span class="token comment" spellcheck="true">/* 水平位置 */</span>
+            <span class="token property">margin-left</span><span class="token punctuation">:</span> <span class="token number">30</span>px<span class="token punctuation">;</span>
+            <span class="token property">margin-right</span><span class="token punctuation">:</span> <span class="token number">20</span>px<span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">/* 垂直位置 */</span>
+            <span class="token property">margin-top</span><span class="token punctuation">:</span> <span class="token number">50</span>px<span class="token punctuation">;</span>
+            <span class="token property">margin-bottom</span><span class="token punctuation">:</span> <span class="token number">20</span>px<span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">/* 复合写法 */</span>
+            <span class="token comment" spellcheck="true">/* 四个参数：上 右 下 左 */</span>
+            <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">50</span>px <span class="token number">20</span>px <span class="token number">20</span>px <span class="token number">30</span>px<span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">/* 两个参数：上下 左右 */</span>
+            <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">20</span>px <span class="token number">30</span>px<span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">/* 一个参数：四个方向距离一致 */</span>
+            <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">50</span>px<span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">/* 清除默认边距 */</span>
+            <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+            <span class="token comment" spellcheck="true">/* ③ 背景颜色 */</span>
+            <span class="token comment" spellcheck="true">/* 颜色值三种写法：
+               1.颜色的单词；
+               2.rgb(0-255,0-255,0-255)；
+               3.十六进制数，三位或六位。*/</span>
+            <span class="token property">background-color</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+            <span class="token comment" spellcheck="true">/* ④ 文字样式 */</span>
+            <span class="token comment" spellcheck="true">/* 文字大小，浏览器默认渲染14px */</span>
+            <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">20</span>px<span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">/* 文字字体 */</span>
+            <span class="token property">font-family</span><span class="token punctuation">:</span> SimSun<span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">/* 文字颜色，颜色写法和背景颜色一致 */</span>
+            <span class="token property">color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+        &amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span>
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>box1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    有生之年，狭路相逢，终不能幸免，手心忽然长出纠缠的曲线。
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>box2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    懂事之前，情动以后，长不过一天，留不住算不出流年。
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
 
             </div>
             <hr/>
@@ -488,7 +617,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">John Doe</a>
+                    <a href="/about" rel="external nofollow noreferrer">kevin</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -498,7 +627,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://kevindurant-source.github.io/2020/10/09/hello-world/">https://kevindurant-source.github.io/2020/10/09/hello-world/</a>
+                    <a href="https://kevindurant-source.github.io/2020/10/11/02.CSS%E5%9F%BA%E6%9C%AC%E6%A0%B7%E5%BC%8F%E5%92%8C%E5%85%83%E7%B4%A0%E9%80%89%E6%8B%A9%E5%99%A8/">https://kevindurant-source.github.io/2020/10/11/02.CSS%E5%9F%BA%E6%9C%AC%E6%A0%B7%E5%BC%8F%E5%92%8C%E5%85%83%E7%B4%A0%E9%80%89%E6%8B%A9%E5%99%A8/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -511,7 +640,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">John Doe</a>
+                    <a href="/about" target="_blank">kevin</a>
                     !
                 </span>
             </div>
@@ -701,18 +830,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/10/09/hello-world/">
+                <a href="/2020/10/11/html+css+js%E5%AE%9E%E7%8E%B0%E6%98%9F%E7%A9%BA%E7%89%B9%E6%95%88/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -722,18 +850,17 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-09
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-11
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
-                            John Doe
+                            kevin
                             
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
@@ -744,13 +871,13 @@
                 本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2020/10/09/hello-world/">
+                <a href="/2020/10/11/02.CSS%E5%9F%BA%E6%9C%AC%E6%A0%B7%E5%BC%8F%E5%92%8C%E5%85%83%E7%B4%A0%E9%80%89%E6%8B%A9%E5%99%A8/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -761,12 +888,12 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-09
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-11
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
-                            John Doe
+                            kevin
                             
                         </span>
                     </div>
@@ -969,7 +1096,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <span id="year">2019</span>
-            <a href="/about" target="_blank">John Doe</a>
+            <a href="/about" target="_blank">kevin</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
